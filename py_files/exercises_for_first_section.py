@@ -1,27 +1,27 @@
-#First Task
+# First Task
 my_degree = float(input("Degree : ")) # 1 radi = 57.3 degree
 my_radi = my_degree/57.3
 print(my_radi)
 
-#Second Task
+# Second Task
 my_radi = float(input("Radian : ")) # 1 radi = 57.3 degree
 my_degree = my_radi*57.3
 print(my_degree)
 
-#Third Task
+# Third Task
 height = float(input("Height : "))
 base1=float(input("Base, first value : "))
 base2=float(input("Base, second value : "))
 Area = float(height*(base1+base2)/2)
 print("Area is :",Area)
 
-#Fourth Task
+# Fourth Task
 height = float(input("Height of parallelogram : "))
 base = float(input("Length of base : "))
 area = float(height*base)
 print(area)
 
-#Fifth Task
+# Fifth Task
 x,y = list(input("volume: ").split(","))
 x = x.strip()
 y = y.strip()

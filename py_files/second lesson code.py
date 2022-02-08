@@ -14,8 +14,13 @@ import datetime as dt
 def my_func(my_birth = 2000):
   current_dt = dt.datetime.now()
   current_year = current_dt.year
-  my_age = current_year - my_birth
-  return my_age
+  if my_birth < current_year:
+    my_age = current_year - my_birth
+    print(my_age)
+    return my_age
+  #else: 
+  print("Please enter a valid birth year")
+  return None
 
 
 def calculated_age():
@@ -27,10 +32,10 @@ def calculated_age():
         return age_year
 
     except:
-        #string
         return my_func()
-my_calculated_age = calculated_age()
-print(my_calculated_age)
+
+calculated_age()        
+
 
 #Second Task
 def my_discount(my_price):
