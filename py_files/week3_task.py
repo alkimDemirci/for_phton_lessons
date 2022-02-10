@@ -8,40 +8,56 @@ Original file is located at
 """
 
 # First Task
+""""
 my_input = input("Please enter: ")
 while my_input != "coder403":
   my_input = input("Please enter: ") 
 print(my_input)
 
+"""
+while True:
+  my_input = input("Please enter: ")
+  if my_input=="coder403":
+    print(my_input)
+    break
+
 # Second Task
+
+# First Version
 def  check_password(password):
   my_password = password.strip()
-
-  """
-  counter = 0
-  while counter < 1:
-    for char in my_password:
-      if char.isupper()==True:
-        counter+=1
+  for char in my_password:
+    if char.isupper()==True:
         check = True
+        break
+    else:
+      check = False         
   if check:
-  """ 
-  if any(char.isupper() for char in my_password): # is True
-    """ 
     point = False
     for elem in my_password:
       if elem.islower()==True:
         point = True
         break
     if point:
-    """
+      if any(elem.islower() for elem in my_password): # is True
+        if my_password.isalnum(): # is True
+          return True
+    else:
+      return False
+  else:
+    return False
+
+# Second Version
+def  check_password(password):
+  my_password = password.strip()
+  if any(char.isupper() for char in my_password):
     if any(elem.islower() for elem in my_password): # is True
       if my_password.isalnum(): # is True
         return True
     else:
       return False
   else:
-    return False
+    return False    
 
 # Third Task
 email_and_password = input("Input: ") # seperated by space
