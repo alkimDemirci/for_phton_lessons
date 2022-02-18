@@ -42,9 +42,6 @@ def my_fib_num(num,x = 0,y = 1):
   else:
     return my_fib_num(num - 1) + my_fib_num(num - 2)  
 
-num = int(input("Please state which order of Fibonacci Numbers you want to find: "))
-print(my_fib_num(num))
-
 # Creating Matrix
 import random as rnd 
 def create_matrix(n_row,n_column):
@@ -70,19 +67,33 @@ def find_aver(my_matrix):
 
 # Check whether your number is Happy Number:
 def check_my_happy_number(num):
+  is_happy = False
   my_num = [] # list of integers
   for x in range(len(num)):
     my_num.append(int(num[x]))
-  while i in range(100):
+
+  for i in range(100):
+
     if sum([x**2 for x in my_num]) == 1:
-      print("Yes it is a Happy Number")
-      break
+      is_happy = True
+
+      return is_happy
+
     else:
       my_sum = sum([x**2 for x in my_num])
       my_num = []
+
       for y in range(len(str(my_sum))):
         my_num.append(int(str(my_sum)[y]))
-  print("We assume that your number is not a Happy Number since we did not reach to 1 with 100 trials")
+
+  return is_happy       
+    
 
 num = input("Please enter your number: ")
 check_my_happy_number(num)
+
+if check_my_happy_number(num):
+  print("Yes it is a Happy Number")
+
+else:
+   print("We assume that your number is not a Happy Number since we did not reach to 1 with 100 trials")
